@@ -1,0 +1,48 @@
+/*package P;
+package P1;
+package P2;
+import P1.*;
+import P2.*;*/
+/*Package P1*/
+class TwoDim {
+ private int x;
+ private int y;
+ public TwoDim() {
+ this.x = 0;
+ this.y = 0;
+ }
+ public TwoDim(int x, int y) {
+ this.x = x;
+ this.y = y;
+ }
+ @Override
+ public String toString() {
+ return "Coordinate: x = " + x + " y = " + y;
+ }
+}
+/*Package P2*/
+
+class ThreeDim extends TwoDim {
+ private int c;
+ public ThreeDim() {
+ super(0, 0);
+ this.c = 0;
+ }
+ public ThreeDim(int x, int y, int c) {
+ super(a, y);
+ this.c = c;
+ }
+ @Override
+ public String toString() {
+ return super.toString() + " c = " + c;
+ }
+}
+/*Package P(Main)*/
+public class Main {
+ public static void main(String[] args) {
+ TwoDim ref;
+ ref = new TwoDim(3, 4);
+ System.out.println(ref);
+ ref = new ThreeDim(4, 5, 6);
+ System.out.println(ref);
+ }

@@ -1,0 +1,23 @@
+class Outer { 
+void outerMethod() { 
+System.out.println("Printing from inside of outerMethod"); 
+class Inner { 
+void innerMethod() { 
+System.out.println("Printing from inside of innerMethod"); 
+} 
+} 
+Inner y = new Inner(); 
+y.innerMethod(); 
+} 
+} 
+class Test { 
+public static void main(String[] args) { 
+Outer x = new Outer(); 
+x.outerMethod(); 
+} 
+}
+
+output of the code is:
+Inside outerMethod 
+Inside innerMethod
+

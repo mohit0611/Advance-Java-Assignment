@@ -1,0 +1,23 @@
+import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+  
+public class Main {
+    
+    public static void main(String[] args)
+    {
+        
+        File file1 = new File("/home/apoorv/file1.java");
+        File file2 = new File("/home/apoorv/file2.txt");
+        long t1 = file1.lastModified();
+        long t2 = file2.lastModified();
+        
+        DateFormat date1 = new SimpleDateFormat("MMMM dd, yyyy hh:mm a");
+        
+        System.out.println("abc.java modified date is : "
+                           + date1.format(t1));
+        
+        System.out.println("file.txt modified date is : "
+                           + date1.format(t2));
+    }
+}

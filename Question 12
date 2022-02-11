@@ -1,0 +1,80 @@
+import java.io.*;
+import java.util.*;
+
+public class EmployeeParse {
+	
+	private Integer ID ;
+	private String Name ;
+	private Integer Age ;
+	
+	
+	public Integer getID() {
+		return ID;
+	}
+
+	public void setID(Integer ID) {
+		this.ID = ID;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String Name) {
+		this.Name = Name;
+	}
+
+	public Integer getAge() {
+		return Age;
+	}
+
+	public void setEmpCity(Integer Age) {
+		this.Age = Age;
+	}
+
+	
+}
+
+    public class Main{
+	public static void main(String[] args) {
+	       
+	       static {
+			ArrayList<EmployeeParse> empList = new ArrayList<EmployeeParse>() ;
+		    File file = new File ( "Employee.txt") ;
+		    
+		    if ( file.exists() )   
+		    {  
+		    	Scanner inFile = new Scanner( file );
+		    	inFile.useDelimiter("[;]");
+		        while ( inFile.hasNext() )
+		        {
+		        	String line = inFile.next() ;
+		            line = line.trim().replaceAll("\n", "");
+		            line = line.trim().replaceAll("\t", "");
+		            line = line.trim().replaceAll(" ", "");
+		            if ( line.length() > 0 ) {
+		            	String delims = "[,]+";
+		            	String[] tokens = line.split(delims);
+		            	EmployeeParse emp = new EmployeeParse() ;
+		            	emp.setID(Integer.parseInt(tokens[0]));		            	
+		            	emp.setName(tokens[1]);
+		            	emp.setAge(tokens[2]);
+		            	empList.add(emp) ;
+		            }
+		        }
+		    }
+		    Integer rec = 0 ;
+		    Scanner sc= new Scanner(System.in);
+		    for (EmployeeParse employee : empList) {
+		        int id=sc.nextInt();
+		        String nm=sc.nextLine();
+		        int age=sc.nextInt();
+				 employee.setID(id);
+				 employee.setName(nm);
+				 employee.getAge(age);
+			}
+			inFile.close();
+		}
+	
+	}
+}

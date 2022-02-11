@@ -1,0 +1,49 @@
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Scanner;  
+import java.util.Set;
+
+public class Main{
+    public static void main(String[] args)
+    {
+        Scanner sc= new Scanner(System.in);
+        int ch;
+        System.out.println("Enter a choice to continue");
+        System.out.println("Press 1: Add new phone book entry");
+        System.out.println("Press 2: Search a Phone Number");
+        System.out.println("Press 3: Quit");
+        System.out.println("------------------------------------");
+       Map<String, String> phonebook= new HashMap<>();
+        do 
+        {
+        ch=sc.nextInt();
+        switch(ch){
+            case 1:
+                System.out.println("Enter your name and phone number in next line");
+                String name1;
+                String phoneno1;
+                name1=sc.nextLine();
+                phoneno1=sc.nextLine();
+                phonebook.put(name1,phoneno1);
+                break;
+            case 2:
+                String name;
+                name=sc.nextLine();
+                if(phonebook.containsKey(name))
+                {
+                    System.out.println("Phone Number of"+name+":"+ phonebook.get(name));
+                }
+                break;
+            case 3:
+                System.out.println("Quit has been pressed!!");
+                break;
+                    
+        }
+            
+        }while(ch!=3);
+    }
+}
